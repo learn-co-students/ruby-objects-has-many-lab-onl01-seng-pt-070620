@@ -15,8 +15,17 @@ class Post
   end
   
   
+  def self.all 
+    @@all 
+  end
   
-  
+  def author_name 
+    if self.author == nil 
+      nil
+    else 
+      self.author.name
+    end
+  end
   
   # hello = Song.new("Hello")
   #       hello.artist = adele

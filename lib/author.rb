@@ -29,4 +29,8 @@ class Author
     @@ALL_AUTHOR_POSTS
   end
   
+  def self.all 
+    @@all 
+  end
+  
 end     #ends class

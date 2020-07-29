@@ -1,30 +1,32 @@
 class Author 
-  @@ALL_ARTIST_SONGS = 0 
+  @@ALL_AUTHOR_POSTS = 0 
+  @@all = []
   attr_accessor :name, :posts
   
   def initialize(name)
     @name = name
     @posts = []
+    @@all << self
   end
   
-  def add_song(song_arg)
+  def add_post(post_arg)
     counter = 0 
-    if song_arg.artist == nil && counter == 0     #checks if artist already exists for song
-      song_arg.artist = self          
+    if post_arg.author == nil && counter == 0     #checks if author already exists for song
+      post_arg.author = self          
       counter += 1 
     else 
-      @posts << song_arg         
-      @@ALL_ARTIST_SONGS += 1 
+      @posts << post_arg         
+      @@ALL_AUTHOR_POSTS += 1 
     end
   end
   
-  def add_song_by_name(name)
-    new_song_obj = Song.new(name)
-    add_song(new_song_obj)
+  def add_post_by_title(name)
+    new_post_obj = Post.new(name)
+    add_post(new_post_obj)
   end
   
-  def self.song_count
-    @@ALL_ARTIST_SONGS
+  def self.post_count
+    @@ALL_AUTHOR_POSTS
   end
   
 end     #ends class

@@ -10,7 +10,9 @@ end
     @@all 
   end 
   
-  def artist_name
-   self.artist.name
-  end
+   def artist_name
+    if artist
+    artist.name
+    end
+end 
 end 

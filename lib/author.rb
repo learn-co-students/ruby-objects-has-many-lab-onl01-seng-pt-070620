@@ -4,12 +4,12 @@ class Author
   def initialize(name)
     @name = name 
   end
-end 
   
   def posts 
    Post.all.select do |post|
     post.author = self
    end 
+ end 
   
     def add_post(title)
   title.author = self
@@ -23,4 +23,4 @@ end
  def self.post_count
     Post.all.count
   end 
-end 
+end

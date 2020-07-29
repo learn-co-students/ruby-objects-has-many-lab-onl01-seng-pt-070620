@@ -1,36 +1,19 @@
 require 'pry'
-class Song 
+class Song
+  attr_accessor :name, :artist
+
   @@all = []
-  attr_accessor :name
-  attr_reader :artist
-  
+
   def initialize(name)
     @name = name
     @@all << self
   end
-  
-  def artist=(newartist)
-    @artist = newartist
-    puts "song artist add"
-    @artist.add_song(self)
+
+  def self.all
+    @@all
   end
-  
-  def self.all 
-    @@all 
-  end
-  
+
   def artist_name
-    if self.artist == nil 
-      nil
-    else 
-      self.artist.name
-    end
+    artist.name if artist
   end
-  
-  
-  # hello = Song.new("Hello")
-  #       hello.artist = adele
-  #       expect(adele.songs).to eq([hello])
-  
-  
-end     #ends class
+end

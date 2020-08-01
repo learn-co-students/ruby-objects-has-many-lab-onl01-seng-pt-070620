@@ -1,4 +1,4 @@
-# Ruby Objects Has Many Lab
+def ini# Ruby Objects Has Many Lab
 
 ## Objectives
 
